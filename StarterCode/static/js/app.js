@@ -84,9 +84,6 @@ function builddemotable(sample) {
     
       Plotly.newPlot("bubble", DataBubble, LayoutBubble);
 
- //});
- //};
-
  let Bar_data =[
     {
       y: otu_ids.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse(),
