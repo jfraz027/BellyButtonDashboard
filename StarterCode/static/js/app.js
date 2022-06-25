@@ -13,7 +13,7 @@ function init() {
     });
 
     let firstsample = sampleNames[0];
-    //buildcharts(firstsample);
+    buildcharts(firstsample);
     builddemotable(firstsample);
   });
   
@@ -22,7 +22,7 @@ init();
 
 // Function to change options
 function optionChanged(newsample) {
-    //buildcharts(newsample);
+    buildcharts(newsample);
     builddemotable(newsample);
 }
 
@@ -52,38 +52,40 @@ function builddemotable(sample) {
 }
 
 // Function to build Charts
-// function buildcharts(sample){
-//      d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json"
-// ).then((data)=> {
-//     let samples= data.samples;
+ function buildcharts(sample){
+     d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json"
+ ).then((data)=> {
+     let samples= data.samples;
 //     let resultsarray= samples.filter(sampleobject => 
+       let samplesarray =samples.filter(sampleobj =>
 //     sampleobject.id == sample);
+        sampleobj.id == sample);
 //     let result= resultsarray[0]
+        let result =samplesarray[0]
+    let otu_ids = result.otu_ids;
+    let otu_labels = result.otu_labels;
+    let sample_values = result.sample_values;
 
-//     let ids = result.otu_ids;
-//     let labels = result.otu_labels;
-//     let values = result.sample_values;
-
-//     var LayoutBubble = {
-//         margin: { t: 0 },
-//         xaxis: { title: "OTU ID" },
-//         hovermode: "closest",
-//         };
+    let LayoutBubble = {
+        margin: { t: 10 },
+        xaxis: { title: "OTU ID" },
+        hovermode: "closest",
+        };
     
-//         var DataBubble = [ 
-//         {
-//           x: ids,
-//           y: values,
-//           text: labels,
-//           mode: "markers",
-//           marker: {
-//             color: ids,
-//             size: values,
-//             }
-//         }
-//       ];
+        let DataBubble = [ 
+        {
+          x: otu_ids,
+          y: sample_values,
+          text: otu_labels,
+          mode: "markers",
+          marker: {
+            color: otu_ids,
+            size: sample_values,
+            }
+        }
+      ];
     
-//       Plotly.newPlot("bubble", DataBubble, LayoutBubble);
+      Plotly.newPlot("bubble", DataBubble, LayoutBubble);
 
-//  });
-//  };
+ });
+ };
