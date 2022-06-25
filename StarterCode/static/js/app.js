@@ -99,7 +99,6 @@ function builddemotable(sample) {
   ];
 
   let BarLayout = {
-    //title: "Top 10 Bacteria Cultures Found",
     margin: { t: 10, l: 200 },
     };
 
