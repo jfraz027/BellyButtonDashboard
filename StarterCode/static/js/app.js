@@ -55,13 +55,10 @@ function builddemotable(sample) {
  function buildcharts(sample){
      d3.json("https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-Interactive-Web-Visualizations/02-Homework/samples.json"
  ).then((data)=> {
-     let samples= data.samples;
-//     let resultsarray= samples.filter(sampleobject => 
-       let samplesarray =samples.filter(sampleobj =>
-//     sampleobject.id == sample);
-        sampleobj.id == sample);
-//     let result= resultsarray[0]
-        let result =samplesarray[0]
+    let samples= data.samples;
+    let samplesarray =samples.filter(sampleobj =>
+    sampleobj.id == sample);
+    let result =samplesarray[0]
     let otu_ids = result.otu_ids;
     let otu_labels = result.otu_labels;
     let sample_values = result.sample_values;
@@ -87,5 +84,25 @@ function builddemotable(sample) {
     
       Plotly.newPlot("bubble", DataBubble, LayoutBubble);
 
- });
+ //});
+ //};
+
+ let Bar_data =[
+    {
+      y: otu_ids.slice(0, 10).map(otuID => `OTU ${otuID}`).reverse(),
+      x: sample_values.slice(0,10).reverse(),
+      text: otu_labels.slice(0,10).reverse(),
+      type:"bar",
+      orientation:"h",
+
+    }
+  ];
+
+  let BarLayout = {
+    //title: "Top 10 Bacteria Cultures Found",
+    margin: { t: 10, l: 200 },
+    };
+
+  Plotly.newPlot("bar", Bar_data, BarLayout);
+});
  };
