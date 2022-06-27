@@ -100,6 +100,7 @@ function buildcharts(sample) {
     Plotly.newPlot("bar", Bar_data, BarLayout);
   });
 }
+
 let Gaugedata = [
   {
     type: "indicator",
@@ -107,7 +108,8 @@ let Gaugedata = [
     title: {
       text: "<b>Belly Button Washing Frequency</b> <br> <b>Scrub Per Week</b>",
       font: { size: 18 }, },
-    gauge: { axis: { range: [null, 9] } },
+    gauge: { axis: { range: [null, 10] } },
+    
   },
 ];
 
@@ -118,3 +120,4 @@ let Gaugelayout = {
 };
 
 Plotly.newPlot("gauge", Gaugedata, Gaugelayout);
+
