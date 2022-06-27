@@ -53,16 +53,15 @@ URL `https://2u-data-curriculum-team.s3.amazonaws.com/dataviz-classroom/v1.1/14-
 
 
 
-6. Deploy your app to a free static page hosting service.
+6. Deploy app to a free static page hosting service.
 
 7. Additional Task
 
+*   Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the weekly washing frequency of the individual.
 
-* Adapt the Gauge Chart from <https://plot.ly/javascript/gauge-charts/> to plot the weekly washing frequency of the individual.
+*   Modify the gauge code to account for values ranging from 0 through 9.
 
-* Modify the gauge code to account for values ranging from 0 through 9.
-
-* Update the chart whenever a new sample is selected.
+*   Update the chart whenever a new sample is selected.
 
 ![Weekly Washing Frequency Gauge](Images/gauge.png)
 
