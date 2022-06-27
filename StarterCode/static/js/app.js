@@ -111,7 +111,6 @@ function buildcharts(sample) {
         },
         type: "indicator",
         mode: "gauge+number",
-        // delta: { reference: 380 },
         gauge: {
           axis: { range: [null, 10] },
           bar: { color: "black" },
