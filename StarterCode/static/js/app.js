@@ -15,7 +15,6 @@ function init() {
     let firstsample = sampleNames[0];
     buildcharts(firstsample);
     builddemotable(firstsample);
-    // buildGauge(firstsample);
   });
 }
 init();
@@ -24,7 +23,6 @@ init();
 function optionChanged(newsample) {
   buildcharts(newsample);
   builddemotable(newsample);
-  // buildGauge(newsample);
 }
 
 // Function to pull the Metadata into Demographic Table
